@@ -1,0 +1,87 @@
+
+.result-container {
+  background-image: url("../img/background.jpg");
+   background-position: center;
+  
+  background-size:100vw 100vh;
+  
+  height: 100vh;
+  display: flex;
+  padding-top: 20px;
+    
+  justify-content: center;
+  align-items: center;
+  
+  #result-score {
+    background-color: transparent;
+    margin-top: 20px;
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h2 {
+      font-size: larger;
+      font-weight: 800;
+      color: $dark;
+      line-height: 40px;
+    }
+    h1{
+        color:$dark;
+    }
+    &__score {
+      width: 200px;
+      background-color: rgb(218, 188, 88);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      border: 1px solid $dark;
+      margin-top: 10px;
+      color: $dark;
+      font-size: large;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+    #result-massege,
+    #saved-massege {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: "Courier New", Courier, monospace;
+      text-transform: capitalize;
+      text-justify: unset;
+      width: 600px;
+      height: 200px;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 2px solid black;
+      margin-top: 5px;
+      font-size: larger;
+      color: $dark;
+      background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
+    }
+    #time{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Courier New", Courier, monospace;
+      text-transform: capitalize;
+      text-justify: unset;
+      width: 600px;
+      height: 200px;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 2px solid black;
+      background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
+      margin-top: 5px;
+      font-size: larger;
+      color: $dark;
+    }
+  }
+}
