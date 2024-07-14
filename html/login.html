@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../Sass/main.css" />
+    <link rel="stylesheet" href="../font/css/all.min.css">
+  </head>
+  <body>
+    <div class="log-main">
+      <div class="log-main__div">
+        <div>
+          <h2 class="head">login</h2>
+           <form method="get"  onsubmit="login(event) " action="exam.html">
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="Enter the email"
+              id="email"
+              class="input-group__input"
+              onchange="validEmail()"
+            />
+            <label class="input-group__label" for="email" name="Email">Email</label>
+            <div class="error"><span> Please write Right Email </span></div>
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Enter the Password" id="password" class="input-group__input" name="Password"  autocomplete="off" onchange="validPassword()"> 
+            <i id="eye1" class="fa-solid fa-eye-slash" onclick="Pass_Eye()"></i>
+             <label class="input-group__label" for="password" >Password</label>
+             <div   class="error"><span > Please write  Password more than 8 number</span></div> 
+          </div>
+          <div class="btn-remember"> <input type="checkbox" class="btn-remember__check" name="Remeber" id="rememberCheck" onclick="RememberMe()"><span > Remember Me</span> </div>
+          <div class="btn-forget">
+            <a href="">
+              Forget My Password</a
+            >
+          </div>
+          <input type="submit" class="Ebtn" value="Log In">
+        </div>
+      </form>
+        <div class="">
+          <img src="../img/login.png" alt="signUp" />
+          <div>
+            <a href="../html/regestration.html" class="para"> I am not a member signUp </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/login_validation.js"></script>
+  </body>
+</html>

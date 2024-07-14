@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Sass/main.css" />
+    <link rel="stylesheet" href="../font/css/all.min.css" />
+    <title>result</title>
+  </head>
+  <body>
+   
+
+    <div class="result-container">
+      
+      <div id="result-score">
+        <div id="time"> <h1>The Time is out</h1></div>
+        <h1> your Score:</h1>
+        <div id="result-score__score"></div>
+        <div id="result-massege"></div>
+        
+        
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         
+        let userScore = JSON.parse(localStorage.getItem("userScore"));
+        let result=document.getElementById("result-score__score")
+        let massege=document.getElementById("result-massege")
+
+        massege.innerHTML = userScore.requiredScore < (0.5 * userScore.overallScore)
+       ? ` <h2> Sorry ${userScore.fname} ${userScore.lname},</h2> 
+       <h3>you have failed</h3><h3>you can revision and try again later </h3>
+       
+       `
+       : ` <h2> Congratulations ${userScore.fname} ${userScore.lname},</h2>
+       <h2> you have passed! <h2>
+        
+       
+       
+        `;
+      
+      result.innerHTML=`<h1> ${userScore.requiredScore} From ${userScore.overallScore}</h1>`
+      
+      
+     
+
+      });
+     
+
+
+    </script>
+  </body>
+</html>

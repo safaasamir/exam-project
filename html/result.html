@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Sass/main.css" />
+    <link rel="stylesheet" href="../font/css/all.min.css" />
+    <title>result</title>
+  </head>
+  <body>
+    <!-- <div class="res_container">
+      <div class="result">
+        <h2>PASS or FAILD</h2>
+      </div>
+      <div class="content">
+        <div><span>Overall score:</span> 78.6%</div>
+        <div><span>Required score:</span> 70%</div>
+        <div><span>Time taken:</span> 1h 06m 17s</div>
+        <div><span>Questions asked:</span> 125</div>
+        <div><span>Correct:</span> 98</div>
+        <div><span>Incorrect:</span> 25</div>
+        <div><span>First Name:</span> <span id="fname"></span></div>
+        <div><span>Last Name:</span> <span id="lname"></span></div>
+        <div><span>Score:</span> <span id="score"></span></div>
+      </div>
+    </div> -->
+     
+    <div class="result-container">
+     
+      
+      <div id="result-score">
+        <h1> your Score:</h1>
+        <div id="result-score__score"></div>
+        <div id="result-massege"></div>
+        <div id="saved-massege"><h2> saved </h2>
+        <h3>You submitted the form successfully.  </h3></div>
+      </div>
+   
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let userScore = JSON.parse(localStorage.getItem("userScore"));
+
+      //   if (userScore) {
+      //     document.getElementById("fname").textContent = userScore.fname;
+      //     document.getElementById("lname").textContent = userScore.lname;
+      //     document.getElementById("score").textContent =
+      //       userScore.scoreFinal.toFixed(2) + "%";
+      //   } else {
+      //     console.log("No score found in localStorage");
+      //   }
+      let result=document.getElementById("result-score__score")
+      result.innerHTML=`<h1> ${userScore.requiredScore} From ${userScore.overallScore}</h1>`
+      let massege=document.getElementById("result-massege")
+      massege.innerHTML = userScore.requiredScore < (0.5 * userScore.overallScore)
+       ? ` <h2> Sorry ${userScore.fname} ${userScore.lname},</h2> 
+       <h3>you have failed</h3><h3>you can revision and try again later </h3>
+       
+       `
+       : ` <h2> Congratulations ${userScore.fname} ${userScore.lname},</h2>
+       <h2> you have passed! <h2>
+        
+       
+       
+        `;
+        
+
+      });
+
+      
+    </script>
+  </body>
+</html>

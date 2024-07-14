@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocExam</title>
+    <link rel="stylesheet" href="../Sass/main.css">
+    <style>
+      #myProgress {
+        width: 100%;
+        background-color: #ddd;
+      }
+
+      
+ 
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <div class="Exam_container">
+      <div id="myBar"></div>
+
+      <div id="examContainer">
+        <p id="questionText"></p>
+        <div id="answersContainer"></div>
+        
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+        <button id="markBtn">Mark</button>
+      </div>
+      
+      <button id="submitBtn" style="display:none;">submit</button>
+    </div>
+
+    <div class="mark-time">
+      <div class="time">
+        <span> time</span>
+      </div>
+      <div class="mark_div">
+        <h2>Marked Question</h2>
+      </div>
+     
+    </div>
+    
+
+  </div>
+    <script type="module"  defer src="../js/main.js"></script>
+  </body>
+</html>
