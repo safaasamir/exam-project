@@ -1,0 +1,64 @@
+.input-group {
+  position: relative;
+  i{
+    position: absolute;
+   right: 10px;
+   top: 15px;
+   }
+  
+  &__input {
+    border-radius: $btn-radius;
+    width: $btn-width;
+    height: $btn-height;
+    padding: $btn-padding;
+    background-color: transparent;
+    border: 1px solid $dark-grey;
+
+    &__Error {
+      border-radius: $btn-radius;
+      width: $btn-width;
+      height: $btn-height;
+      padding: $btn-padding;
+      background-color: transparent;
+      border: 1px solid $warning;
+    }
+  }
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: $dark;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  &__input:valid ~ &__label,
+  &__input__Error:valid ~ &__label {
+    top: 0;
+    background-color: $light;
+  }
+}
+
+.para {
+  font-size: $font-size;
+  color: $light-grey;
+}
+
+.remember{
+  font-size: $font-size;
+  color: $light-grey;
+   width: $btn-width;
+   padding: $btn-padding;
+   display: flex;
+   flex-direction: row;
+   column-gap: 10px;
+  &__check{
+    width:20px;
+    height: 20px;
+    
+  }
+
+  
+}
