@@ -1,5 +1,4 @@
-
-import { Score } from './score.js';
+import { Score } from "./score.js";
 
 export class Quiz {
   constructor(questions) {
@@ -23,7 +22,7 @@ export class Quiz {
     this.markBtn.addEventListener("click", () => this.toggleMarkQuestion());
     this.submitBtn.addEventListener("click", () => this.submitQuiz());
 
-    this.startTimer(1); // 60 minutes
+    this.startTimer(2); // 60 minutes
     this.loadQuestion();
     this.checkButtonVisibility();
   }
@@ -45,7 +44,7 @@ export class Quiz {
   //         var elapsedTime = (currentTime - startTime) / 1000; // convert to seconds
 
   //         var progress = (elapsedTime / totalTime) * 100;
-          
+
   //         if (progress >= 100) {
   //           clearInterval(id);
   //           i = 0;
@@ -60,6 +59,7 @@ export class Quiz {
   //   return minutes
   // }
   startTimer(minutes) {
+    var timeElem = document.getElementById("myTime");
     const elem = document.getElementById("myBar");
     const totalTime = minutes * 60; // convert minutes to seconds
     const intervalTime = 1000; // 1 second
@@ -68,14 +68,23 @@ export class Quiz {
     const frame = () => {
       const currentTime = new Date().getTime();
       const elapsedTime = (currentTime - startTime) / 1000; // convert to seconds
-      const progress = (elapsedTime / totalTime) * 100;
+      var progress = (elapsedTime / totalTime) * 100;
+      var timeRemaining = totalTime - Math.floor(elapsedTime);
+
+      console.log("Elapsed Time:", elapsedTime);
+      console.log("Progress:", progress);
+      console.log("Time Remaining:", timeRemaining);
 
       if (progress >= 100) {
-        this.showScore()
         clearInterval(id);
-         
+        this.showScore();
         window.location.replace("../html/time_end.html");
       } else {
+        timeElem.textContent =
+          Math.floor(timeRemaining / 60) +
+          " : " +
+          (timeRemaining % 60) +
+          " Remaining";
         elem.style.width = progress + "%";
       }
     };
@@ -84,9 +93,6 @@ export class Quiz {
   }
 
   loadQuestion() {
-    
-    
-    
     let currentQuestion = this.questions[this.currentQuestionIndex];
     this.questionTextElement.textContent = currentQuestion.question;
     this.answersContainer.innerHTML = "";
@@ -99,8 +105,8 @@ export class Quiz {
       answerInput.setAttribute("type", "radio");
       answerInput.setAttribute("name", "answer");
       answerInput.setAttribute("value", index);
-      answerLabel.setAttribute("class","question-ans")
-      answerInput.setAttribute("class","ans-input");
+      answerLabel.setAttribute("class", "question-ans");
+      answerInput.setAttribute("class", "ans-input");
 
       if (this.answers[this.currentQuestionIndex] === index) {
         answerInput.checked = true;
@@ -117,7 +123,6 @@ export class Quiz {
     });
 
     this.updateMarkButton();
-   
   }
 
   nextQuestion() {
@@ -159,7 +164,7 @@ export class Quiz {
     this.markedQuestions.forEach((questionIndex) => {
       let questionElement = document.createElement("div");
       questionElement.textContent = this.questions[questionIndex].question;
-      questionElement.classList.add('marked-question');
+      questionElement.classList.add("marked-question");
       questionElement.addEventListener("click", () => {
         this.currentQuestionIndex = questionIndex;
         this.loadQuestion();
@@ -170,15 +175,22 @@ export class Quiz {
   }
 
   checkButtonVisibility() {
-    this.prevBtn.style.display = this.currentQuestionIndex === 0 ? "none" : "inline";
-    this.nextBtn.style.display = this.currentQuestionIndex === this.questions.length - 1 ? "none" : "inline";
-    this.submitBtn.style.display = this.currentQuestionIndex === this.questions.length - 1 ? "inline" : "none";
+    this.prevBtn.style.display =
+      this.currentQuestionIndex === 0 ? "none" : "inline";
+    this.nextBtn.style.display =
+      this.currentQuestionIndex === this.questions.length - 1
+        ? "none"
+        : "inline";
+    this.submitBtn.style.display =
+      this.currentQuestionIndex === this.questions.length - 1
+        ? "inline"
+        : "none";
   }
 
   submitQuiz() {
-    if (this.answers.every(answer => answer !== null)) {
+    if (this.answers.every((answer) => answer !== null)) {
       this.showScore();
-      
+
       window.location.replace("../html/result.html");
     } else {
       alert("Please answer all questions before submitting.");
@@ -186,11 +198,10 @@ export class Quiz {
   }
 
   showScore() {
-
     let fname = localStorage.getItem("fname") || "";
     let lname = localStorage.getItem("lname") || "";
-    let overallScore=this.questions.length;
-  
+    let overallScore = this.questions.length;
+
     let score = this.questions.reduce((acc, question, index) => {
       if (this.answers[index] !== null) {
         let selectedAnswer = question.answers[this.answers[index]];
@@ -201,8 +212,7 @@ export class Quiz {
       return acc;
     }, 0);
 
-    const newScore = new Score(fname, lname,overallScore, score);
+    const newScore = new Score(fname, lname, overallScore, score);
     localStorage.setItem("userScore", JSON.stringify(newScore));
   }
 }
-

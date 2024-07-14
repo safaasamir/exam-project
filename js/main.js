@@ -1,6 +1,6 @@
 // main.js
-import { Score } from './score.js';
-import { Quiz } from './quiz.js';
+import { Score } from "./score.js";
+import { Quiz } from "./quiz.js";
 
 let questions = [
   {
@@ -40,7 +40,10 @@ function shuffleArray(array) {
   return array;
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener("DOMContentLoaded", (event) => {
   let shuffledQuestions = shuffleArray(questions);
   let quiz = new Quiz(shuffledQuestions);
+});
+window.addEventListener("beforeunload", (e) => {
+  e.returnValue = "Changes you made may not be saved";
 });
