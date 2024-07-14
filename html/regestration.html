@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../Sass/main.css">
+    <link rel="stylesheet" href="../font/css/all.min.css">
+</head>
+<body>
+    <div class="signup-main">
+      <div class="signup-main__div">
+       <div > <h2 class="head">Registeration</h2> 
+         <form method="get" action="login.html" onsubmit="regestration(event)" >
+         <div class="input-group">
+      <input type="text" placeholder="Enter First name" id="fname" class="input-group__input "  name="FirstName" autocomplete="off" onchange="validFName()"> 
+       <label class="input-group__label" for="fname" >First Name</label> 
+       <div class="error"><span > Please write Right name </span></div>
+    </div>
+   
+    <div class="input-group">
+        <input type="text" placeholder="Enter last Name" id="lname" class="input-group__input" name="LastName"  autocomplete="off" onchange="validLName()"> 
+         <label class="input-group__label" for="lname" >Last Name</label>
+         <div   class="error"><span > Please write Right name </span></div> 
+      </div>
+      <div class="input-group">
+        <input type="text" placeholder="Enter the email" id="email" class="input-group__input" name="Email"  autocomplete="off"onchange="validEmail()" > 
+         <label class="input-group__label" for="email" >Email</label> 
+         <div   class="error"><span > Please write Right Email </span></div>
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Enter the Password" id="password" class="input-group__input" name="Password"  autocomplete="off" onchange="validPassword()"> 
+        <i id="eye1" class="fa-solid fa-eye-slash" onclick="Pass_Eye()"></i>
+         <label class="input-group__label" for="password" >Password</label>
+         <div   class="error"><span > Please write  Password more than 8 number</span></div> 
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Re-enter-Password" id="rePassword" class="input-group__input" name="Re-Password"  autocomplete="off" onchange="validRe_Password()" > 
+        <i id="eye2" class="fa-solid fa-eye-slash" onclick="RePass_Eye()" ></i>
+        <label class="input-group__label" for="rePassword" >Re-enter-Password</label>
+         <div   class="error"><span > Please write the same password </span></div> 
+      </div>
+       <input type="submit" class="Ebtn" value="Regestration Now"/>
+       
+    </div>
+   </form>
+       <div class=""><img src="../img/signup.jpg" alt="signUp">
+         <div>
+            <a href="../html/login.html" class="para"> i am already a member </a>
+           </div></div>
+       
+    </div>
+   </div>
+   <script src="../js/signup_validation.js"></script>
+</body>
+</html>
