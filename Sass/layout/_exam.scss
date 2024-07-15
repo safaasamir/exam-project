@@ -82,8 +82,12 @@
   padding: 5px;
   margin-bottom: 5px;
   width: 400px;
+  font-size: large;
   // height: 100px;
   border-radius: 15px;
+  #myTime {
+    font-size: larger;
+  }
 }
 .question-ans {
   background-color: $light-grey;

@@ -278,7 +278,11 @@ r .body .Exam_container #markBtn:hover {
   padding: 5px;
   margin-bottom: 5px;
   width: 400px;
+  font-size: large;
   border-radius: 15px;
+}
+.time #myTime {
+  font-size: larger;
 }
 
 .question-ans {
