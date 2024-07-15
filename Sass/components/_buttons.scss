@@ -1,21 +1,12 @@
-.Ebtn{
-    
- background-color: $primary;
-   padding:$btn-padding;
-   color:white;
-   border:none;
-   border-radius:$btn-radius;
-   font-size: 20px;
-   font-family: $mainFont;
-   width:$btn-width;
-   height: $btn-height;
-   cursor: pointer;
-     
+.Ebtn {
+  background-color: $green-background;
+  padding: $btn-padding;
+  color: white;
+  border: none;
+  border-radius: $btn-radius;
+  font-size: 20px;
+  font-family: $mainFont;
+  width: $btn-width;
+  height: $btn-height;
+  cursor: pointer;
 }
- 
-
-
-
-
-
-

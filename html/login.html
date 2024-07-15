@@ -21,30 +21,40 @@
               id="email"
               class="input-group__input"
               onchange="validEmail()"
-            />
+            >
             <label class="input-group__label" for="email" name="Email">Email</label>
             <div class="error"><span> Please write Right Email </span></div>
           </div>
           <div class="input-group">
-            <input type="password" placeholder="Enter the Password" id="password" class="input-group__input" name="Password"  autocomplete="off" onchange="validPassword()"> 
+            <input
+             type="password"
+              placeholder="Enter the Password" 
+              id="password" 
+            class="input-group__input" 
+            name="Password"  autocomplete="off" onchange="validPassword()"
+             > 
             <i id="eye1" class="fa-solid fa-eye-slash" onclick="Pass_Eye()"></i>
              <label class="input-group__label" for="password" >Password</label>
              <div   class="error"><span > Please write  Password more than 8 number</span></div> 
           </div>
-          <div class="btn-remember"> <input type="checkbox" class="btn-remember__check" name="Remeber" id="rememberCheck" onclick="RememberMe()"><span > Remember Me</span> </div>
-          <div class="btn-forget">
-            <a href="">
-              Forget My Password</a
-            >
+          <div class="btn-remember" >
+             <input type="checkbox" class="btn-remember__check" 
+            name="Remeber" id="rememberCheck" onclick="RememberMe()" >
+            <span >  Remember Me</span> 
+             <div class="btn-forget">
+            <a href="">Forget Password</a>
           </div>
+         </div>
+        
           <input type="submit" class="Ebtn" value="Log In">
+          <span class="para"> I am not a member 
+            <a class="para" href="../html/regestration.html" >  signUp </a> 
+          </span>
         </div>
       </form>
-        <div class="">
-          <img src="../img/login.png" alt="signUp" />
-          <div>
-            <a href="../html/regestration.html" class="para"> I am not a member signUp </a>
-          </div>
+        <div class="sidePic">
+          <img src="../img/Exams-bro.png" alt="signUp" >
+        
         </div>
       </div>
     </div>

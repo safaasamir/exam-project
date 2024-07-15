@@ -1,28 +1,45 @@
-.signup-main{
-    background-image:url("../img/background.jpg");
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+.signup-main {
+  background-color: $light-grey; //////////////////////
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sidePic {
+    background-image: url("../img/Exams-rafiki.png");
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50vh;
+    height: 75vh;
+    border-radius: 20px;
+  }
+  .head {
+    margin-left: 20px;
+  }
+  &__div {
     display: flex;
+    background-color: $light; ///////////////
+    border-radius: 20px; ///////////////////
+    padding: 20px;
+    // box-shadow: 0 15px 8px rgba(255, 255, 255, 0.308);
+    border-radius: 20px; /////////////////// //////////////////////
+  }
+  .input-group,
+  .btn-remember,
+  .Ebtn {
+    margin: 20px;
+  }
+  .para {
+    display: flex;
+    color: $dark-grey;
+
     justify-content: center;
-    align-items: center;
-   &__div{
-    display: flex;
-
-   
-    padding: 10px;
-
-   }
-   .input-group,.btn-remember,.Ebtn{
-    margin:20px;
-   }
-   .para{
-    display: flex;
-    justify-content: center;
-   }
-
+    a {
+      color: $dark;
+      margin-left: 6px;
+    }
+  }
 }
-

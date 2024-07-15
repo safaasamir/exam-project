@@ -1,107 +1,125 @@
-.body{
-background-image: url("../img/background.jpg");
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items:center;
-font-size: larger;
-column-gap: 40px;
-background-position: center;
-background-size: 100vw 100vh;
-background-repeat: no-repeat;
+.body {
+  background-color: $light-grey;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  column-gap: 40px;
+  background-position: center;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 
-.Exam_container{
-   
-     margin-top: 50px;
-    width:700px;
+  .Exam_container {
+    margin-top: 30px;
+    background-color: $light;
+    width: 700px;
     height: 500px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    
-    row-gap: 50px;
-   #answersContainer{
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    row-gap: 10px;
-    padding: 10px;
-   }
-   
-   
-    button{
-        width: 80px;
-        height: 40px;
+
+    row-gap: 30px;
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      .markBtnd {
+        align-self: flex-start;
+      }
+    }
+    #markBtn {
+      background-color: $light;
+      color: $alarm;
+      border: 2px solid $alarm;
+      margin-left: 44vw;
+      r &:hover {
+        color: $light;
+        cursor: pointer;
+        background-color: $alarm;
+      }
+    }
+    #answersContainer {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      row-gap: 10px;
+      padding: 10px;
+    }
+
+    button {
+      width: 80px;
+      height: 40px;
       font-size: large;
-      background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
-        border-radius: 10px;
-        color:black;
-        margin-top: 5px;
-        float: right;
-        margin-right: 5px;
-      
+      background-color: $green-background;
+      border-radius: 10px;
+      color: $light;
+      margin-top: 5px;
+      margin-right: 5px;
     }
-    #submitBtn{
-        width: 100%;
-        height: 60px;
-        
-       
+    #submitBtn {
+      width: 100%;
+      height: 40px;
     }
+  }
+}
+.mark_div {
+  background-color: $light;
+
+  width: 400px;
+  // height: 200px;
+  overflow: auto;
+  border-radius: 15px;
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
+.time {
+  background-color: $green-background;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 400px;
+  // height: 100px;
+  border-radius: 15px;
 }
-.mark_div{
-    background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
-  
-    width: 400px;
-    height: 200px;
-    overflow: auto;
-    border-radius: 15px;
-    h2{
-        text-align: center;
-        margin-bottom: 10px;
-    }
+.question-ans {
+  background-color: $light-grey;
+  padding: 10px;
+  width: 450px;
+  border-radius: 5px;
+}
+#questionText {
+  margin-left: 10px;
+}
+.ans-input {
+  height: 20px;
+  width: 20px;
+
+  background-color: transparent;
+  margin-right: 10px;
 }
 
-.time{
-    background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
-     padding: 5px;
-     margin-bottom:  5px;
-    width: 400px;
-    height: 200px;
-    border-radius: 15px;
+#myBar {
+  width: 1%;
+  height: 25px;
+  background-color: $green-background;
+  border-radius: 15px;
 }
-.question-ans{
-    background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
-    padding: 10px;
-    width: 450px;
-   }
-   .ans-input{
-   height: 20px;
-   width: 20px;
-    
-    background-color: transparent;
-    margin-right:10px ;
-   }
 
-   #myBar {
-    width:1%;
-    height: 20px;
-    background-image: linear-gradient(to right, $light-yellow,$dark-yellow);
-    border-radius: 15px;
-  }
-  .marked-question {
-    cursor: pointer;
-    margin-bottom: 5px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    padding: 5px;
-    border-radius: 15px;
-  }
-  .marked-question:hover {
-    background-color: beige;
-    color:$dark;
-  }
+.marked-question {
+  cursor: pointer;
+  margin: 5px;
+  padding: 15px;
+  border: 1px solid #ddd;
+
+  background-color: $alarm;
+  color: $dark;
+  border-radius: 10px;
+}
+.marked-question:hover {
+  background-color: $light;
+  color: $dark;
+}
