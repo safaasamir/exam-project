@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -10,67 +11,105 @@
 }
 
 .signup-main {
-  background-image: url("../img/background.jpg");
+  background-color: #ececec;
   height: 100vh;
   display: flex;
   flex-direction: row;
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.signup-main .sidePic {
+  background-image: url("../img/Exams-rafiki.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50vh;
+  height: 75vh;
+  border-radius: 20px;
+}
+.signup-main .head {
+  margin-left: 20px;
+}
 .signup-main__div {
   display: flex;
-  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  border-radius: 20px;
 }
-.signup-main .input-group, .signup-main .btn-remember, .signup-main .Ebtn {
+.signup-main .input-group,
+.signup-main .btn-remember,
+.signup-main .Ebtn {
   margin: 20px;
 }
 .signup-main .para {
   display: flex;
+  color: #474747;
   justify-content: center;
+}
+.signup-main .para a {
+  color: #040404;
+  margin-left: 6px;
 }
 
 .log-main {
-  background-image: url("../img/background.jpg");
   height: 100vh;
   display: flex;
   flex-direction: row;
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-color: #ececec;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.log-main img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
 .log-main__div {
   display: flex;
-  background-color: transparent;
+  background-color: white;
+  border-radius: 20px;
   padding: 20px;
 }
-.log-main .input-group, .log-main .btn-remember, .log-main .Ebtn {
+.log-main__div .input-group,
+.log-main__div .btn-remember,
+.log-main__div .Ebtn {
   margin: 20px;
 }
-.log-main .input-group, .log-main .btn-forget, .log-main .Ebtn {
+.log-main__div .input-group,
+.log-main__div .Ebtn {
   margin-top: 40px;
 }
-.log-main .btn-forget {
+.log-main__div .btn-remember {
   display: flex;
-  justify-content: end;
+  flex-direction: row;
 }
-.log-main .btn-forget a {
-  text-decoration: none;
-  color: #bab6b6;
+.log-main__div .btn-forget {
+  margin-left: 140px;
 }
-.log-main .para {
+.log-main__div .btn-forget a {
+  text-decoration: underline;
+  color: #040404;
+}
+.log-main__div .para {
   display: flex;
+  color: #474747;
   justify-content: center;
+}
+.log-main__div .para a {
+  margin-left: 6px;
+  color: #040404;
+}
+.log-main .head {
+  margin-left: 20px;
 }
 
 .result-container {
-  background-image: url("../img/background.jpg");
+  background-color: #ececec;
   background-position: center;
   background-size: 100vw 100vh;
   height: 100vh;
@@ -100,12 +139,12 @@
 }
 .result-container #result-score__score {
   width: 200px;
-  background-color: rgb(218, 188, 88);
+  background-color: rgba(8, 38, 11, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
-  border: 1px solid #040404;
+  border: 2px solid #ececec;
   margin-top: 10px;
   color: #040404;
   font-size: large;
@@ -116,24 +155,26 @@
 .result-container #result-score #saved-massege {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-family: "Courier New", Courier, monospace;
   text-transform: capitalize;
   text-justify: unset;
   width: 600px;
-  height: 200px;
+  height: auto;
   padding: 20px;
   border-radius: 10px;
   font-weight: 700;
-  border: 2px solid black;
+  border: 2px solid #ececec;
   margin-top: 5px;
   font-size: larger;
   color: #040404;
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  background-color: #ffffff;
 }
 .result-container #result-score #time {
   display: flex;
+  height: auto;
+  background-color: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -145,15 +186,19 @@
   padding: 20px;
   border-radius: 10px;
   font-weight: 700;
-  border: 2px solid black;
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  border: 2px solid #ececec;
   margin-top: 5px;
   font-size: larger;
+}
+.result-container #result-score #time h1 {
   color: #040404;
+}
+.result-container #result-score #time img {
+  color: red;
 }
 
 .body {
-  background-image: url("../img/background.jpg");
+  background-color: #ececec;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -167,14 +212,33 @@
   background-repeat: no-repeat;
 }
 .body .Exam_container {
-  margin-top: 50px;
+  margin-top: 30px;
+  background-color: #ffffff;
   width: 700px;
   height: 500px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  row-gap: 50px;
+  row-gap: 30px;
+}
+.body .Exam_container .btns {
+  display: flex;
+  justify-content: space-between;
+}
+.body .Exam_container .btns .markBtnd {
+  align-self: flex-start;
+}
+.body .Exam_container #markBtn {
+  background-color: #ffffff;
+  color: #ffc800;
+  border: 2px solid #ffc800;
+  margin-left: 44vw;
+}
+r .body .Exam_container #markBtn:hover {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #ffc800;
 }
 .body .Exam_container #answersContainer {
   display: flex;
@@ -187,22 +251,20 @@
   width: 80px;
   height: 40px;
   font-size: large;
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  background-color: rgba(8, 38, 11, 0.8);
   border-radius: 10px;
-  color: black;
+  color: #ffffff;
   margin-top: 5px;
-  float: right;
   margin-right: 5px;
 }
 .body .Exam_container #submitBtn {
   width: 100%;
-  height: 60px;
+  height: 40px;
 }
 
 .mark_div {
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  background-color: #ffffff;
   width: 400px;
-  height: 200px;
   overflow: auto;
   border-radius: 15px;
 }
@@ -212,18 +274,22 @@
 }
 
 .time {
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  background-color: rgba(8, 38, 11, 0.8);
   padding: 5px;
   margin-bottom: 5px;
   width: 400px;
-  height: 200px;
   border-radius: 15px;
 }
 
 .question-ans {
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  background-color: #ececec;
   padding: 10px;
   width: 450px;
+  border-radius: 5px;
+}
+
+#questionText {
+  margin-left: 10px;
 }
 
 .ans-input {
@@ -235,23 +301,23 @@
 
 #myBar {
   width: 1%;
-  height: 20px;
-  background-image: linear-gradient(to right, #f1ee8e, #e6b400);
+  height: 25px;
+  background-color: rgba(8, 38, 11, 0.8);
   border-radius: 15px;
 }
 
 .marked-question {
   cursor: pointer;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin: 5px;
+  padding: 15px;
   border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  padding: 5px;
-  border-radius: 15px;
+  background-color: #ffc800;
+  color: #040404;
+  border-radius: 10px;
 }
 
 .marked-question:hover {
-  background-color: beige;
+  background-color: #ffffff;
   color: #040404;
 }
 
@@ -266,7 +332,7 @@
 }
 
 .Ebtn {
-  background-color: #3938e5;
+  background-color: rgba(8, 38, 11, 0.8);
   padding: 15px;
   color: white;
   border: none;
@@ -299,7 +365,7 @@
   height: 50px;
   padding: 15px;
   background-color: transparent;
-  border: 1px solid #5a5a5a;
+  border: 1px solid #474747;
 }
 .input-group__input__Error {
   border-radius: 15px;
@@ -314,25 +380,27 @@
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 17px;
   color: #040404;
   padding: 0 5px;
   pointer-events: none;
   transition: 0.5s;
 }
 .input-group__input:valid ~ .input-group__label, .input-group__input__Error:valid ~ .input-group__label {
+  color: #040404;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .para {
   font-size: 20px;
-  color: #bab6b6;
+  color: #ececec;
 }
 
 .remember {
   font-size: 20px;
-  color: #bab6b6;
+  color: #ececec;
   width: 400px;
   padding: 15px;
   display: flex;
