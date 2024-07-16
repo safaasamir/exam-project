@@ -53,6 +53,40 @@
   margin-left: 6px;
 }
 
+@media (min-width: 350px) and (max-width: 750px) {
+  .signup-main .sidePic {
+    display: none;
+  }
+  .signup-main .Signup-Right-div {
+    width: 100%;
+  }
+  .signup-main .Signup-Right-div .input-group__inout {
+    width: 100%;
+  }
+  .signup-main .Signup-Right-div .Ebtn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 720px) and (max-width: 850px) {
+  .signup-main {
+    width: 100%;
+  }
+  .signup-main .sidePic {
+    display: block;
+    background-size: 100% 100%;
+  }
+  .signup-main .Signup-Right-div {
+    width: 50%;
+  }
+  .signup-main .Signup-Right-div .input-group__input {
+    width: 100%;
+  }
+  .signup-main .Signup-Right-div .Ebtn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 .log-main {
   height: 100vh;
   display: flex;
@@ -87,9 +121,7 @@
 .log-main__div .btn-remember {
   display: flex;
   flex-direction: row;
-}
-.log-main__div .btn-forget {
-  margin-left: 140px;
+  justify-content: space-between;
 }
 .log-main__div .btn-forget a {
   text-decoration: underline;
@@ -108,6 +140,39 @@
   margin-left: 20px;
 }
 
+@media (min-width: 300px) and (max-width: 763px) {
+  .log-main .sidePic {
+    display: none;
+  }
+  .log-main .rightDiv {
+    width: 100%;
+  }
+  .log-main .rightDiv .input-group__input {
+    width: 100%;
+  }
+  .log-main .rightDiv .Ebtn {
+    width: 100%;
+    margin-left: 0;
+  }
+  .log-main .rightDiv .btn-forget {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 763px) and (max-width: 900px) {
+  .log-main .sidePic {
+    width: 50%;
+  }
+  .log-main .rightDiv {
+    width: 50%;
+  }
+  .log-main .rightDiv .input-group__input {
+    width: 100%;
+  }
+  .log-main .rightDiv .Ebtn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 .result-container {
   background-color: #ececec;
   background-position: center;

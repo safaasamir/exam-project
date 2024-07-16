@@ -24,7 +24,7 @@
     background-color: $light; ///////////////
     border-radius: 20px; ///////////////////
     padding: 20px;
-    // box-shadow: 0 15px 8px rgba(255, 255, 255, 0.308);
+    
     border-radius: 20px; /////////////////// //////////////////////
   }
   .input-group,
@@ -41,5 +41,50 @@
       color: $dark;
       margin-left: 6px;
     }
+  }
+}
+
+@media (min-width:350px) and (max-width:750px){
+  .signup-main{
+    .sidePic{
+      display: none;
+    }
+    .Signup-Right-div{
+      width: 100%;
+      .input-group__inout{
+        width: 100%;
+      }
+      .Ebtn{
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    
+
+  }
+}
+
+@media (min-width:720px) and (max-width:850px){
+
+  .signup-main{
+     width: 100%;
+    .sidePic{
+      display: block;
+      background-size: 100% 100%;
+     }
+
+     .Signup-Right-div{
+       width: 50%;
+   
+       .input-group__input{
+         width: 100%;
+       }
+       .Ebtn{
+         width: 100%;
+         margin-left: 0;
+         
+       }
+      
+     }
   }
 }
