@@ -22,42 +22,10 @@ export class Quiz {
     this.markBtn.addEventListener("click", () => this.toggleMarkQuestion());
     this.submitBtn.addEventListener("click", () => this.submitQuiz());
 
-    this.startTimer(2); // 60 minutes
+    this.startTimer(10); // 60 minutes
     this.loadQuestion();
     this.checkButtonVisibility();
   }
-
-  // startTimer(minutes) {
-  //   var elem = document.getElementById("myBar");
-  //   var totalTime = minutes * 60; // convert minutes to seconds
-  //   var intervalTime = 1000; // 1 second
-  //   var i = 0;
-
-  //   (function () {
-  //     if (i === 0) {
-  //       i = 1;
-  //       var id = setInterval(frame, intervalTime);
-  //       var startTime = new Date().getTime();
-
-  //       function frame() {
-  //         var currentTime = new Date().getTime();
-  //         var elapsedTime = (currentTime - startTime) / 1000; // convert to seconds
-
-  //         var progress = (elapsedTime / totalTime) * 100;
-
-  //         if (progress >= 100) {
-  //           clearInterval(id);
-  //           i = 0;
-  //           this.showScore();
-  //          window.location.replace("../html/time_end.html")
-  //         } else {
-  //           elem.style.width = progress + "%";
-  //         }
-  //       }
-  //     }
-  //   })();
-  //   return minutes
-  // }
   startTimer(minutes) {
     var timeElem = document.getElementById("myTime");
     const elem = document.getElementById("myBar");
@@ -153,9 +121,9 @@ export class Quiz {
 
   updateMarkButton() {
     if (this.markedQuestions.has(this.currentQuestionIndex)) {
-      this.markBtn.textContent = "Unmark";
+      this.markBtn.src="../img/fill-star.svg";
     } else {
-      this.markBtn.textContent = "Mark";
+      this.markBtn.src="../img/light-star.svg";
     }
   }
 
@@ -175,12 +143,29 @@ export class Quiz {
   }
 
   checkButtonVisibility() {
-    this.prevBtn.style.display =
-      this.currentQuestionIndex === 0 ? "none" : "inline";
-    this.nextBtn.style.display =
-      this.currentQuestionIndex === this.questions.length - 1
-        ? "none"
-        : "inline";
+    if(this.currentQuestionIndex === 0)
+    {
+      this.prevBtn.disabled =true;
+      this.prevBtn.style.opacity=.6;
+      this.prevBtn.style.cursor="not-allowed";
+
+    }
+    else{
+      this.prevBtn.disabled=false;
+      this.prevBtn.style.opacity=1;
+      this.prevBtn.style.cursor="pointer";
+    }
+   if( this.currentQuestionIndex === this.questions.length - 1){
+    this.nextBtn.disabled =true;
+    this.nextBtn.style.opacity=.6;
+    this.nextBtn.style.cursor="not-allowed";
+   }
+   else{
+    this.nextBtn.disabled =false;
+    this.nextBtn.style.opacity=1;
+    this.nextBtn.style.cursor="pointer"
+   }
+    
     this.submitBtn.style.display =
       this.currentQuestionIndex === this.questions.length - 1
         ? "inline"
