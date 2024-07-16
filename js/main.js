@@ -3,7 +3,6 @@ import { Score } from "./score.js";
 import { Quiz } from "./quiz.js";
 
 let questions = [
-
   {
     question: "1- Which element has the chemical symbol 'O'?",
     answers: [
@@ -75,3 +74,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // window.addEventListener("beforeunload", (e) => {
 //   e.returnValue = "Changes you made may not be saved";
 // });
+window.onbeforeunload = function (e) {
+  e = e || window.event;
+  if (e) {
+    e.returnValue = "Your Answers is not submited and will be lost";
+  }
+  return "Your Answers is not submited and will be lost";
+};
