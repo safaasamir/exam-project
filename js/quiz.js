@@ -89,8 +89,19 @@ export class Quiz {
         this.answers[this.currentQuestionIndex] = index;
       });
     });
+    document.getElementById("answered-count").textContent =
+      this.countAnsweredQuestions();
+    document.getElementById("remaining-count").textContent =
+      this.countRemainingQuestions();
 
     this.updateMarkButton();
+  }
+  countAnsweredQuestions() {
+    return this.answers.filter((answer) => answer !== null).length;
+  }
+
+  countRemainingQuestions() {
+    return this.questions.length - this.countAnsweredQuestions();
   }
 
   nextQuestion() {
@@ -121,9 +132,9 @@ export class Quiz {
 
   updateMarkButton() {
     if (this.markedQuestions.has(this.currentQuestionIndex)) {
-      this.markBtn.src="../img/fill-star.svg";
+      this.markBtn.src = "../img/fill-star.svg";
     } else {
-      this.markBtn.src="../img/light-star.svg";
+      this.markBtn.src = "../img/light-star.svg";
     }
   }
 
@@ -143,29 +154,25 @@ export class Quiz {
   }
 
   checkButtonVisibility() {
-    if(this.currentQuestionIndex === 0)
-    {
-      this.prevBtn.disabled =true;
-      this.prevBtn.style.opacity=.6;
-      this.prevBtn.style.cursor="not-allowed";
+    if (this.currentQuestionIndex === 0) {
+      this.prevBtn.disabled = true;
+      this.prevBtn.style.opacity = 0.6;
+      this.prevBtn.style.cursor = "not-allowed";
+    } else {
+      this.prevBtn.disabled = false;
+      this.prevBtn.style.opacity = 1;
+      this.prevBtn.style.cursor = "pointer";
+    }
+    if (this.currentQuestionIndex === this.questions.length - 1) {
+      this.nextBtn.disabled = true;
+      this.nextBtn.style.opacity = 0.6;
+      this.nextBtn.style.cursor = "not-allowed";
+    } else {
+      this.nextBtn.disabled = false;
+      this.nextBtn.style.opacity = 1;
+      this.nextBtn.style.cursor = "pointer";
+    }
 
-    }
-    else{
-      this.prevBtn.disabled=false;
-      this.prevBtn.style.opacity=1;
-      this.prevBtn.style.cursor="pointer";
-    }
-   if( this.currentQuestionIndex === this.questions.length - 1){
-    this.nextBtn.disabled =true;
-    this.nextBtn.style.opacity=.6;
-    this.nextBtn.style.cursor="not-allowed";
-   }
-   else{
-    this.nextBtn.disabled =false;
-    this.nextBtn.style.opacity=1;
-    this.nextBtn.style.cursor="pointer"
-   }
-    
     this.submitBtn.style.display =
       this.currentQuestionIndex === this.questions.length - 1
         ? "inline"
@@ -173,6 +180,7 @@ export class Quiz {
   }
 
   submitQuiz() {
+    window.onbeforeunload = null;
     if (this.answers.every((answer) => answer !== null)) {
       this.showScore();
 
