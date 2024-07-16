@@ -11,7 +11,7 @@
   <body>
     <div class="log-main">
       <div class="log-main__div">
-        <div>
+        <div class="rightDiv">
           <h2 class="head">login</h2>
            <form method="get"  onsubmit="login(event) " action="exam.html">
           <div class="input-group">
@@ -38,9 +38,11 @@
              <div   class="error"><span > Please write  Password more than 8 number</span></div> 
           </div>
           <div class="btn-remember" >
-             <input type="checkbox" class="btn-remember__check" 
+            <div>
+              <input type="checkbox" class="btn-remember__check" 
             name="Remeber" id="rememberCheck" onclick="RememberMe()" >
             <span >  Remember Me</span> 
+            </div> 
              <div class="btn-forget">
             <a href="">Forget Password</a>
           </div>
