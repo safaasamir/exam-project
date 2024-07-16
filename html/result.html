@@ -23,21 +23,14 @@
       document.addEventListener("DOMContentLoaded", function () {
         let userScore = JSON.parse(localStorage.getItem("userScore"));
 
-        //   if (userScore) {
-        //     document.getElementById("fname").textContent = userScore.fname;
-        //     document.getElementById("lname").textContent = userScore.lname;
-        //     document.getElementById("score").textContent =
-        //       userScore.scoreFinal.toFixed(2) + "%";
-        //   } else {
-        //     console.log("No score found in localStorage");
-        //   }
+       
         let result = document.getElementById("result-score__score");
         result.innerHTML = `<h1> ${userScore.requiredScore} / ${userScore.overallScore}</h1>`;
         let massege = document.getElementById("result-massege");
         massege.innerHTML =
           userScore.requiredScore < 0.5 * userScore.overallScore
             ? ` <h2> Sorry ${userScore.fname} ${userScore.lname},</h2> 
-       <h3>you have failed</h3><img width="100px" src="../img/cry.svg"><h3>you can revision and try again later </h3>
+       <h3>you have failed</h3><img  width="100px" src="../img/cry.svg"><h3>you can revision and try again later </h3>
        
        `
             : ` <h2> Congratulations ${userScore.fname} ${userScore.lname},</h2><img width="90px" src="../img/happy.svg">
