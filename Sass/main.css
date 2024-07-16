@@ -211,10 +211,12 @@
   height: 60px;
   border: 2px solid #ececec;
   margin-top: 10px;
-  color: #040404;
   font-size: large;
   font-weight: 600;
   border-radius: 10px;
+}
+.result-container #result-score__score h1 {
+  color: #ececec;
 }
 .result-container #result-score #result-massege,
 .result-container #result-score #saved-massege {
@@ -262,6 +264,14 @@
   color: red;
 }
 
+@media (min-width: 300px) and (max-width: 650px) {
+  .result-container #result-score {
+    width: 100%;
+  }
+  .result-container #result-score #result-massege, .result-container #result-score #saved-massege, .result-container #result-score #time {
+    width: 100%;
+  }
+}
 .body {
   background-color: #ececec;
   width: 100%;

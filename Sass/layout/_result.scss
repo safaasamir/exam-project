@@ -1,3 +1,6 @@
+
+
+
 .result-container {
   background-color: $light-grey;
 
@@ -39,10 +42,13 @@
       height: 60px;
       border: 2px solid $light-grey;
       margin-top: 10px;
-      color: $dark;
+      
       font-size: large;
       font-weight: 600;
       border-radius: 10px;
+      h1{
+        color: $light-grey;
+      }
     }
     #result-massege,
     #saved-massege {
@@ -63,6 +69,7 @@
       font-size: larger;
       color: $dark;
       background-color: $light;
+      
     }
     #time {
       display: flex;
@@ -92,3 +99,21 @@
     }
   }
 }
+
+
+@media (min-width:300px) and (max-width:650px){
+  .result-container{
+   
+   
+    #result-score{
+      
+      width: 100%;
+      #result-massege,#saved-massege,#time{
+        width: 100%;
+      }
+    }
+  }
+  
+     
+  
+ }
