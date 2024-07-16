@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DocExam</title>
     <link rel="stylesheet" href="../Sass/main.css" />
+    <link rel="stylesheet" href="../font/css/all.min.css">
     <style>
       #myProgress {
         width: 100%;
@@ -14,18 +15,23 @@
   </head>
   <body>
     <div class="body">
-      <div></div>
+      <div class="center">
       <div class="Exam_container">
         <div id="myBar"></div>
 
         <div id="examContainer">
-          <div class="markBtnd"><button id="markBtn">Mark</button></div>
-          <p id="questionText"></p>
-          <br />
+          
+          <div class="markBtnd"> 
+            <p id="questionText"></p>
+            <img width="35px" id = "markBtn" src="../img/light-star.svg">
+           <!-- <button id="markBtn">Mark</button> -->
+          </div>
+          
+         
           <div id="answersContainer"></div>
           <div class="btns">
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
+            <button disabled  id="prevBtn">Previous</button>
+            <button  id="nextBtn">Next</button>
           </div>
         </div>
 
@@ -34,7 +40,7 @@
 
       <div class="mark-time">
         <div class="time">
-          <img src="../img/clock.svg" alt="" />
+          <img  width= "20px"src="../img/clock.svg" alt="" />
           <span id="myTime"> </span>
           <div class="info">
             <p>❓ Answered: <span id="answered-count"></span></p>
@@ -46,6 +52,7 @@
           <h2>Marked Question</h2>
         </div>
       </div>
+    </div>
     </div>
     <script type="module" defer src="../js/main.js"></script>
   </body>
